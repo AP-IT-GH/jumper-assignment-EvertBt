@@ -67,9 +67,8 @@ public class JumperAgent : Agent
 
     private void Jump(float jumpSignal)
     {
-        while (this.transform.localPosition.y <= 0.18f)
+        while (this.transform.localPosition.y <= 0.30f)
         {
-            Debug.Log("Jumping");
             this.rb.AddForce(0, jumpSignal * jumpPower, 0);
         }
     }

@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 3151841155954358692}
   - component: {fileID: 3151841155954358695}
   - component: {fileID: 3151841155954358689}
-  - component: {fileID: 3151841155954358688}
+  - component: {fileID: 6250919625707158964}
   - component: {fileID: 3151841155954358691}
-  - component: {fileID: 3151841155954358702}
   - component: {fileID: 3151841155954358703}
+  - component: {fileID: 7138344107129328639}
   m_Layer: 0
   m_Name: Agent
   m_TagString: Untagged
@@ -116,7 +116,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 122
   m_CollisionDetection: 0
---- !u!114 &3151841155954358688
+--- !u!114 &6250919625707158964
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -166,20 +166,6 @@ MonoBehaviour:
   m_UseChildSensors: 1
   m_UseChildActuators: 1
   m_ObservableAttributeHandling: 0
---- !u!114 &3151841155954358702
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3151841155954358694}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a5c9d521e5ef4759a8246a07d52221e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DecisionPeriod: 10
-  TakeActionsBetweenDecisions: 1
 --- !u!114 &3151841155954358703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,6 +192,20 @@ MonoBehaviour:
   rayMissColor: {r: 1, g: 1, b: 1, a: 1}
   m_StartVerticalOffset: 0
   m_EndVerticalOffset: 0
+--- !u!114 &7138344107129328639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3151841155954358694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a5c9d521e5ef4759a8246a07d52221e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DecisionPeriod: 10
+  TakeActionsBetweenDecisions: 1
 --- !u!1 &3151841156150010529
 GameObject:
   m_ObjectHideFlags: 0
