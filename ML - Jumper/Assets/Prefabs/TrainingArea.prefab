@@ -32,7 +32,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3151841155954358694}
   m_LocalRotation: {x: 0, y: 0.7071068, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: 8.04, y: 0.2, z: 0}
+  m_LocalPosition: {x: 15.66, y: 0.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8490166526631616311}
@@ -108,7 +108,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3151841155954358694}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 3
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -135,7 +135,7 @@ MonoBehaviour:
   rb: {fileID: 3151841155954358689}
   Obstacle: {fileID: 3151841157667635405}
   speedMultiplier: 0.1
-  jumpMultiplier: 30
+  jumpPower: 1000
 --- !u!114 &3151841155954358691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -197,7 +197,7 @@ MonoBehaviour:
   m_RaysPerDirection: 0
   m_MaxRayDegrees: 70
   m_SphereCastRadius: 0.25
-  m_RayLength: 8
+  m_RayLength: 21
   m_RayLayerMask:
     serializedVersion: 2
     m_Bits: 4294967291
@@ -234,7 +234,7 @@ Transform:
   m_GameObject: {fileID: 3151841156150010529}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 8.75, y: -0.32, z: 0}
-  m_LocalScale: {x: 1.8057832, y: 1, z: 0.5}
+  m_LocalScale: {x: 3.0920424, y: 1, z: 0.5}
   m_Children: []
   m_Father: {fileID: 8490166526631616311}
   m_RootOrder: 0
@@ -330,8 +330,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3151841157667635392}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.39298, y: 0.58759, z: 5}
+  m_LocalPosition: {x: -6, y: 0.5, z: 0}
+  m_LocalScale: {x: 0.39298, y: 1.5, z: 5}
   m_Children: []
   m_Father: {fileID: 8490166526631616311}
   m_RootOrder: 2

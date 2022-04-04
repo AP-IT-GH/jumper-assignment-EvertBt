@@ -1,4 +1,26 @@
 {
+    "JumperAgent": {
+        "checkpoints": [
+            {
+                "steps": 0,
+                "file_path": "results\\JumperAgent\\JumperAgent\\JumperAgent-0.onnx",
+                "reward": null,
+                "creation_time": 1649079256.666093,
+                "auxillary_file_paths": [
+                    "results\\JumperAgent\\JumperAgent\\JumperAgent-0.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 0,
+            "file_path": "results\\JumperAgent\\JumperAgent.onnx",
+            "reward": null,
+            "creation_time": 1649079256.666093,
+            "auxillary_file_paths": [
+                "results\\JumperAgent\\JumperAgent\\JumperAgent-0.pt"
+            ]
+        }
+    },
     "metadata": {
         "stats_format_version": "0.3.0",
         "mlagents_version": "0.28.0",

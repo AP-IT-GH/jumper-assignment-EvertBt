@@ -15,17 +15,16 @@ public class JumperAgent : Agent
 
     public float speedMultiplier; //random each episode
 
-    public float jumpMultiplier = 1;
+    public float jumpPower = 1;
 
     private bool _collisionWithObstacle;
 
     public override void OnEpisodeBegin()
     {
-        Debug.Log("Begin");
         this._collisionWithObstacle = false;
         // Reset obstacle location and speed
-        Obstacle.localPosition = Vector3.zero;
-        speedMultiplier = Random.Range(0.1f, 0.5f);
+        Obstacle.localPosition = new Vector3(-6, 0.5f, 0);
+        speedMultiplier = Random.Range(0.10f, 0.15f);
     }
     public override void CollectObservations(VectorSensor sensor)
     {
@@ -46,23 +45,32 @@ public class JumperAgent : Agent
         Obstacle.transform.Translate(speedMultiplier, 0, 0);
 
         float jumpSignal = Math.Abs(actionBuffers.ContinuousActions[0]);
-
-        if (this.transform.localPosition.y < 0.2f)
+        
+        // Jump
+        if (this.transform.localPosition.y <= 0.18f && jumpSignal > 0.5f)
         {
-            this.rb.AddForce(0, jumpSignal * jumpMultiplier, 0);
+            Jump(jumpSignal);
         }
 
         // Obstacle falls from map
-        if (Obstacle.localPosition.x > 20)
+        if (Obstacle.localPosition.x > 24)
         {
             SetReward(1.0f);
             EndEpisode();
         }
-
-        // Hit by obstacle?
         else if (_collisionWithObstacle)
         {
+            AddReward(-0.5f);
             EndEpisode();
+        }        
+    }
+
+    private void Jump(float jumpSignal)
+    {
+        while (this.transform.localPosition.y <= 0.18f)
+        {
+            Debug.Log("Jumping");
+            this.rb.AddForce(0, jumpSignal * jumpPower, 0);
         }
     }
 }
