@@ -2,22 +2,22 @@
     "JumperAgent": {
         "checkpoints": [
             {
-                "steps": 3675,
-                "file_path": "results\\JumperAgent\\JumperAgent\\JumperAgent-3675.onnx",
-                "reward": -0.5,
-                "creation_time": 1649249509.0802894,
+                "steps": 400016,
+                "file_path": "results\\JumperAgent\\JumperAgent\\JumperAgent-400016.onnx",
+                "reward": 1.0,
+                "creation_time": 1649279209.1387224,
                 "auxillary_file_paths": [
-                    "results\\JumperAgent\\JumperAgent\\JumperAgent-3675.pt"
+                    "results\\JumperAgent\\JumperAgent\\JumperAgent-400016.pt"
                 ]
             }
         ],
         "final_checkpoint": {
-            "steps": 3675,
+            "steps": 400016,
             "file_path": "results\\JumperAgent\\JumperAgent.onnx",
-            "reward": -0.5,
-            "creation_time": 1649249509.0802894,
+            "reward": 1.0,
+            "creation_time": 1649279209.1387224,
             "auxillary_file_paths": [
-                "results\\JumperAgent\\JumperAgent\\JumperAgent-3675.pt"
+                "results\\JumperAgent\\JumperAgent\\JumperAgent-400016.pt"
             ]
         }
     },

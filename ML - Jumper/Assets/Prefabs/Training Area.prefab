@@ -390,7 +390,7 @@ MonoBehaviour:
   rb: {fileID: 8913869419468305952}
   Obstacle: {fileID: 8913869418100957835}
   speedMultiplier: 0.1
-  jumpPower: 1000
+  jumpPower: 1200
 --- !u!54 &8913869419468305952
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -424,7 +424,7 @@ MonoBehaviour:
   m_RaysPerDirection: 0
   m_MaxRayDegrees: 70
   m_SphereCastRadius: 0.3
-  m_RayLength: 20
+  m_RayLength: 7
   m_RayLayerMask:
     serializedVersion: 2
     m_Bits: 4294967291
