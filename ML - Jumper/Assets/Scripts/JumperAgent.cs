@@ -19,11 +19,14 @@ public class JumperAgent : Agent
 
     private bool _collisionWithObstacle;
 
+    private bool _isJumping = false;
+
     public override void OnEpisodeBegin()
     {
         this._collisionWithObstacle = false;
+        this._isJumping = false;
         // Reset obstacle location and speed
-        Obstacle.localPosition = new Vector3(-6, 0.5f, 0);
+        Obstacle.localPosition = new Vector3(-14.5f, 0.8f, 0);
         speedMultiplier = Random.Range(0.10f, 0.15f);
     }
     public override void CollectObservations(VectorSensor sensor)
@@ -47,13 +50,14 @@ public class JumperAgent : Agent
         float jumpSignal = Math.Abs(actionBuffers.ContinuousActions[0]);
         
         // Jump
-        if (this.transform.localPosition.y <= 0.18f && jumpSignal > 0.5f)
+        if (this.transform.localPosition.y <= 0.5f && jumpSignal > 0.5f && !this._isJumping)
         {
+            this._isJumping = true;
             Jump(jumpSignal);
         }
 
         // Obstacle falls from map
-        if (Obstacle.localPosition.x > 24)
+        if (Obstacle.localPosition.x > 15)
         {
             SetReward(1.0f);
             EndEpisode();
@@ -67,9 +71,10 @@ public class JumperAgent : Agent
 
     private void Jump(float jumpSignal)
     {
-        while (this.transform.localPosition.y <= 0.30f)
+        while (this.transform.localPosition.y <= 0.60f)
         {
             this.rb.AddForce(0, jumpSignal * jumpPower, 0);
         }
+        this._isJumping = false;
     }
 }
