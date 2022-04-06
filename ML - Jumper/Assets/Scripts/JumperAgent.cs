@@ -53,7 +53,6 @@ public class JumperAgent : Agent
         if (this.transform.localPosition.y <= 0.5f && jumpSignal > 0.5f && !this._isJumping)
         {
             this._isJumping = true;
-            Jump(jumpSignal);
         }
 
         // Obstacle falls from map
@@ -69,12 +68,15 @@ public class JumperAgent : Agent
         }        
     }
 
-    private void Jump(float jumpSignal)
+    private void FixedUpdate()
     {
-        while (this.transform.localPosition.y <= 0.60f)
+        if (this._isJumping && this.transform.localPosition.y <= 0.60f)
         {
-            this.rb.AddForce(0, jumpSignal * jumpPower, 0);
+            this.rb.AddForce(0, jumpPower, 0);
         }
-        this._isJumping = false;
+        else
+        {
+            this._isJumping = false;
+        }
     }
 }
