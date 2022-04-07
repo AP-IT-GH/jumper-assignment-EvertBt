@@ -3,7 +3,7 @@
     -   Cube (Agent)
     -   Cube (Obstacle)
     -   Cube (Reward obstacle)
-    - ![Scene image](https://github.com/AP-IT-GH/jumper-assignment-EvertBt/blob/main/Images/Scene.png?raw=true)
+    ![Scene image](https://github.com/AP-IT-GH/jumper-assignment-EvertBt/blob/main/Images/Scene.png?raw=true)
 
 2.	Maak volgend script aan:
     -   JumperAgent.cs
@@ -137,7 +137,7 @@
     -   Ray Perceptor Sensor 3D
 
 5.	Stel deze componenten in met volgende waardes:
-    -   …
+    ![Components values](https://github.com/AP-IT-GH/jumper-assignment-EvertBt/blob/main/Images/Components.png?raw=true)
 
 6.	Zorg ervoor dat volgende tags aan de overeenkomstige objecten hangt:
     | Object          | Tag      |
@@ -146,6 +146,7 @@
     | Reward obstacle | Reward   |
 
 7.	Zet beide obstacles op “onzichtbaar”
+    ![Scene image](https://github.com/AP-IT-GH/jumper-assignment-EvertBt/blob/main/Images/Scene-update.png?raw=true)
 
 8.	Maak van alle objecten in deze scene een Prefab
 
