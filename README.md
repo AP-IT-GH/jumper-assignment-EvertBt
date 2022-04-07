@@ -139,9 +139,10 @@
     -   …
 
 6.	Zorg ervoor dat volgende tags aan de overeenkomstige objecten hangt:
-Object	Tag
-Obstacle	Obstacle
-Reward obstacle	Reward
+    | Object          | Tag      |
+    |-----------------|----------|
+    | Obstacle        | Obstacle |
+    | Reward obstacle | Reward   |
 
 7.	Zet beide obstacles op “onzichtbaar”
 
