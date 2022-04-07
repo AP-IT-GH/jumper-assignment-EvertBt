@@ -145,7 +145,7 @@
     | Obstacle        | Obstacle |
     | Reward obstacle | Reward   |
 
-7.	Zet beide obstacles op “onzichtbaar”
+7.	Zet beide obstacles op “onzichtbaar”\
     ![Scene image](https://github.com/AP-IT-GH/jumper-assignment-EvertBt/blob/main/Images/Scene-update.png?raw=true)
 
 8.	Maak van alle objecten in deze scene een Prefab
