@@ -11,7 +11,11 @@ public class JumperAgent : Agent
 {
     public Rigidbody rb;
 
-    public Transform Obstacle;
+    public GameObject Obstacle;
+
+    public GameObject Reward;
+
+    private Transform _obj;
 
     public float speedMultiplier; //random each episode
 
@@ -19,14 +23,33 @@ public class JumperAgent : Agent
 
     private bool _collisionWithObstacle;
 
+    private bool _collisionWithReward;
+
     private bool _isJumping = false;
 
     public override void OnEpisodeBegin()
     {
+        if (_obj)
+        {
+            Destroy(_obj.gameObject);
+        }
+
+        if (Random.Range(0,2) > 0.5f)
+        {
+            _obj = Instantiate(Obstacle).GetComponent<Transform>();
+        }
+        else
+        {
+            _obj = Instantiate(Reward).GetComponent<Transform>();
+        }
+        _obj.gameObject.SetActive(true);
+        _obj.parent = this.transform.parent;
+
+        this._collisionWithReward = false;
         this._collisionWithObstacle = false;
         this._isJumping = false;
         // Reset obstacle location and speed
-        Obstacle.localPosition = new Vector3(-14.5f, 0.8f, 0);
+        _obj.localPosition = new Vector3(-14.5f, 0.8f, 0);
         speedMultiplier = Random.Range(0.10f, 0.15f);
     }
     public override void CollectObservations(VectorSensor sensor)
@@ -37,15 +60,19 @@ public class JumperAgent : Agent
 
     public void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.name == "Obstacle")
+        if (collision.gameObject.tag == "Obstacle")
         {
             this._collisionWithObstacle = true;
+        }
+        else if (collision.gameObject.tag == "Reward")
+        {
+            this._collisionWithReward = true;
         }
     }
     public override void OnActionReceived(ActionBuffers actionBuffers)
     {
         // Acties, size = 2
-        Obstacle.transform.Translate(speedMultiplier, 0, 0);
+        _obj.Translate(speedMultiplier, 0, 0);
 
         float jumpSignal = Math.Abs(actionBuffers.ContinuousActions[0]);
         
@@ -56,9 +83,12 @@ public class JumperAgent : Agent
         }
 
         // Obstacle falls from map
-        if (Obstacle.localPosition.x > 15)
+        if (_obj.localPosition.x > 15)
         {
-            SetReward(1.0f);
+            if (_obj.gameObject.tag == "Obstacle")
+            {
+                SetReward(1.0f);
+            }
             EndEpisode();
         }
         else if (_collisionWithObstacle)
@@ -66,6 +96,11 @@ public class JumperAgent : Agent
             AddReward(-0.5f);
             EndEpisode();
         }        
+        else if (_collisionWithReward)
+        {
+            SetReward(1.0f);
+            EndEpisode();
+        }
     }
 
     private void FixedUpdate()
