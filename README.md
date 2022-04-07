@@ -3,7 +3,7 @@
     -   Cube (Agent)
     -   Cube (Obstacle)
     -   Cube (Reward obstacle)
-    - ![Scene image](https://github.com/AP-IT-GH/jumper-assignment-EvertBt/Images/Scene.png?raw=true)
+    - ![Scene image](https://github.com/AP-IT-GH/jumper-assignment-EvertBt/blob/main/Images/Scene.png?raw=true)
 
 2.	Maak volgend script aan:
     -   JumperAgent.cs
